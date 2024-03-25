@@ -61,7 +61,7 @@ This project uses the Trello API to manage TODO items. In order to
     - Copy the value of '`API Key`' into `TRELLO_API_KEY` in [.env](.env)
 1. Create a API Token for Trello.
     - This can be done by clicking the “Token” link on the same page where your API key is displayed: Trello API Credentials
-    - Copy the generated token into `TRELLO_API_TOKEN`
+    - Copy the generated token into `TRELLO_API_TOKEN` in [.env](.env)
 ![Screenshot showing where to find link to generate token](./docs/trello_api_creds.png)
 1. Create a new board (possibly in a new workspace if you already have other ones)
     - Find the ID of the board
@@ -69,7 +69,7 @@ This project uses the Trello API to manage TODO items. In order to
         1. Import [the local environment](./docs/thunder-client/dev-env.json)
         1. Find your account id using `https://api.trello.com/1/members/me?key={{TRELLO_API_KEY}}&token={{TRELLO_API_TOKEN}}&fields=id`
         1. Find your board using `https://api.trello.com/1/members/{id}/boards?key={{TRELLO_API_KEY}}&token={{TRELLO_API_TOKEN}}&fields=id,name` 
-        1. Copy the id into `TRELLO_BOARD_ID`
+        1. Copy the id into `TRELLO_BOARD_ID` in [.env](.env)
 
 ## Running the App
 
