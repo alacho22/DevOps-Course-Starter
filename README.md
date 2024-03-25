@@ -69,7 +69,9 @@ This project uses the Trello API to manage TODO items. In order to
         1. Import [the local environment](./docs/thunder-client/dev-env.json)
         1. Find your account id using `https://api.trello.com/1/members/me?key={{TRELLO_API_KEY}}&token={{TRELLO_API_TOKEN}}&fields=id`
         1. Find your board using `https://api.trello.com/1/members/{id}/boards?key={{TRELLO_API_KEY}}&token={{TRELLO_API_TOKEN}}&fields=id,name` 
-        1. Copy the id into `TRELLO_BOARD_ID` in [.env](.env)
+        1. Copy the board's id into `TRELLO_BOARD_ID` in [.env](.env)
+        1. Find the first column in the board using `https://api.trello.com/1/boards/{id}/lists?key={{TRELLO_API_KEY}}&token={{TRELLO_API_TOKEN}}&fields=id,name`
+        1. Copy the first list's id into `TRELLO_LIST_ID` in [.env](.env)
 
 ## Running the App
 
