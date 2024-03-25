@@ -11,7 +11,8 @@
 		"vscode": {
 			"extensions": [
 				"ms-python.black-formatter",
-				"rangav.vscode-thunder-client"
+				"rangav.vscode-thunder-client",
+				"ms-python.pylint"
 			]
 		}
 	},

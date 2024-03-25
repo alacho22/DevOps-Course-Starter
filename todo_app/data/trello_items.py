@@ -65,7 +65,7 @@ def add_item(title):
 
     headers = {"Accept": "application/json"}
 
-    list_id_to_add_to = os.getenv("TRELLO_LIST_ID")
+    list_id_to_add_to = os.getenv("TRELLO_TODO_LIST_ID")
     api_key = os.getenv("TRELLO_API_KEY")
     api_token = os.getenv("TRELLO_API_TOKEN")
 
