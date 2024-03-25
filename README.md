@@ -4,15 +4,27 @@
 
 ## System Requirements
 
-The project uses poetry for Python to create an isolated environment and manage package dependencies. To prepare your system, ensure you have an official distribution of Python version 3.8+ and install Poetry using one of the following commands (as instructed by the [poetry documentation](https://python-poetry.org/docs/#system-requirements)):
+The project uses poetry for Python to create an isolated environment and manage package dependencies. You can either use the provided devcontainer which has poetry and python pre-installed or manually install it. Follow the appropriate instructions below.
 
-### Poetry installation (Bash)
+### Dev Container (preferred)
+Open the folder in VS Code. If working on a Windows machine it is advisable to clone the repo in Windows Subsystem for Linux 2 (WSL2) and open VS Code there, as it dramatically improves the performance of file-system operations. See instructions for installing WSL [here](https://learn.microsoft.com/en-us/windows/wsl/install).
+
+When you open the folder in VSCode you should be prompted to open in a Dev Container. Click "Reopen in Container". The container will take a few minutes to build.
+
+![Dev Container prompt](./docs/dev-container-prompt.png)
+
+You can check poetry is installed by running `poetry --version` from a terminal.
+
+### Manual Installation
+To prepare your system, ensure you have an official distribution of Python version 3.8+ and install Poetry using one of the following commands (as instructed by the [poetry documentation](https://python-poetry.org/docs/#system-requirements)):
+
+#### Poetry installation (Bash)
 
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -
 ```
 
-### Poetry installation (PowerShell)
+#### Poetry installation (PowerShell)
 
 ```powershell
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
@@ -24,7 +36,7 @@ You can check poetry is installed by running `poetry --version` from a terminal.
 
 ## Dependencies
 
-The project uses a virtual environment to isolate package dependencies. To create the virtual environment and install required packages, run the following from your preferred shell:
+The project uses a virtual environment to isolate package dependencies. If using a Dev Container this should have happened on startup. To manually create the virtual environment and install required packages, run the following from your preferred shell:
 
 ```bash
 $ poetry install
