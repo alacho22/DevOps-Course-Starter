@@ -15,7 +15,7 @@
       {% for item in items %}
       <li>
         <p>
-          {{ item.title }}
+          {{ item.title }} ({{ item.status }})
         </p>
         <form action="{{ url_for('complete_item_action', id=item.id) }}" method="post">
           <button type="submit">
