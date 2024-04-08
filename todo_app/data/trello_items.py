@@ -87,3 +87,19 @@ def add_item(title):
         "title": card_response["name"],
         "status": "Not Started",
     }
+
+
+def complete_item(id):
+    url = f"https://api.trello.com/1/cards/{id}"
+
+    headers = {"Accept": "application/json"}
+
+    list_id_to_move_to = os.getenv("TRELLO_DONE_LIST_ID")
+    api_key = os.getenv("TRELLO_API_KEY")
+    api_token = os.getenv("TRELLO_API_TOKEN")
+
+    query = {"idList": list_id_to_move_to, "key": api_key, "token": api_token}
+
+    response = requests.request("PUT", url, headers=headers, params=query, timeout=3)
+
+    response.raise_for_status()
