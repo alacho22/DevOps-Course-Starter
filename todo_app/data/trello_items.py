@@ -3,6 +3,8 @@ import os
 import json
 import requests
 
+from todo_app.models.item import Item
+
 
 def get_items():
     """
@@ -44,11 +46,7 @@ def board_list_to_cards(board_list_response):
 
 
 def card_response_to_card(status, card_response):
-    return {
-        "id": card_response["id"],
-        "title": card_response["name"],
-        "status": status,
-    }
+    return Item.from_trello_card(card_response, status)
 
 
 def add_item(title):
