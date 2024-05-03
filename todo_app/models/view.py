@@ -5,3 +5,7 @@ class ViewModel:
     @property
     def items(self):
         return self._items
+
+    @property
+    def done_items(self):
+        return [item for item in self.items if item.status == "Done"]
