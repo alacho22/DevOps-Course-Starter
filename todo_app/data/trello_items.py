@@ -27,12 +27,11 @@ def get_items():
     response.raise_for_status()
 
     board_lists_response = json.loads(response.text)
-    cards_per_status = [
-        board_list_to_cards(board_list_response)
+    all_cards = [
+        card
         for board_list_response in board_lists_response
+        for card in board_list_to_cards(board_list_response)
     ]
-
-    all_cards = reduce(list.__add__, cards_per_status)
 
     return all_cards
 
