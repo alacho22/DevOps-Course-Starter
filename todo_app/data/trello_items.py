@@ -1,4 +1,3 @@
-from functools import reduce
 import os
 import json
 import requests
@@ -22,11 +21,11 @@ def get_items():
     api_token = os.getenv("TRELLO_API_TOKEN")
     query = {"key": api_key, "token": api_token, "cards": "open"}
 
-    response = requests.request("GET", url, headers=headers, params=query, timeout=3)
+    response = requests.get(url, headers=headers, params=query, timeout=3)
 
     response.raise_for_status()
 
-    board_lists_response = json.loads(response.text)
+    board_lists_response = response.json()
     all_cards = [
         card
         for board_list_response in board_lists_response
