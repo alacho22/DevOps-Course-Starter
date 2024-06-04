@@ -1,0 +1,6 @@
+.devcontainer
+.pytest_cache
+.env
+.git
+.venv
+.vscode
