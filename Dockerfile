@@ -10,7 +10,7 @@ FROM base as production
 
 ENV FLASK_ENV=production
 ENV FLASK_DEBUG=false
-RUN poetry install --without dev
+RUN poetry install --no-interaction --no-root --without dev
 COPY todo_app ./todo_app
 ENTRYPOINT [ "poetry", "run", "flask", "run", "--host=0.0.0.0" ]
 
@@ -18,5 +18,5 @@ FROM base as development
 
 ENV FLASK_ENV=development
 ENV FLASK_DEBUG=true
-RUN poetry install
+RUN poetry install --no-interaction --no-root
 ENTRYPOINT [ "poetry", "run", "flask", "run", "--host=0.0.0.0" ]
