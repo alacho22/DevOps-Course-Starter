@@ -75,9 +75,10 @@ This project uses the Trello API to manage TODO items. In order to
 
 ## Running the App
 
-Once the all dependencies have been installed, start the Flask app in development mode within the Poetry environment by running:
+Once the all dependencies have been installed, use the provided [`docker-compose` file](./docker-compose.yml) to start the flask app.
+
 ```bash
-$ poetry run flask run
+docker-compose up
 ```
 
 You should see output similar to the following:

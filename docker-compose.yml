@@ -1,0 +1,10 @@
+services:
+  web:
+    build:
+      context: .
+      target: development
+    ports:
+      - "5000:5000"
+    env_file: .env
+    volumes:
+      - ./todo_app:/app/todo_app
