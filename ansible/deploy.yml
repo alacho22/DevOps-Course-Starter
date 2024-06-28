@@ -13,4 +13,10 @@
       ansible.builtin.shell:
         cmd: curl -sSL https://install.python-poetry.org | python3 -
         creates: ~/.local/bin/poetry
+    - name: Create /opt/todoapp if it does not exit
+      become: true
+      ansible.builtin.file:
+        path: /opt/todoapp
+        state: directory
+        owner: ec2-user
 
