@@ -9,4 +9,8 @@
           - git
           - python3
         state: present
+    - name: Install poetry
+      ansible.builtin.shell:
+        cmd: curl -sSL https://install.python-poetry.org | python3 -
+        creates: ~/.local/bin/poetry
 
