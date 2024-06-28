@@ -2,4 +2,9 @@
   hosts: webservers
   remote_user: ec2-user
   tasks:
+    - name: Install Git
+      become: true
+      ansible.builtin.dnf:
+        name: git
+        state: present
 
