@@ -9,14 +9,22 @@
           - git
           - python3
         state: present
+    
     - name: Install poetry
       ansible.builtin.shell:
         cmd: curl -sSL https://install.python-poetry.org | python3 -
         creates: ~/.local/bin/poetry
+    
     - name: Create /opt/todoapp if it does not exit
       become: true
       ansible.builtin.file:
         path: /opt/todoapp
         state: directory
         owner: ec2-user
+    
+    - name: Clone git repo
+      ansible.builtin.git:
+        repo: 'https://github.com/alacho22/DevOps-Course-Starter'
+        dest: /opt/todoapp
+        version: exercise-4
 
