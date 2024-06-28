@@ -28,3 +28,8 @@
         dest: /opt/todoapp
         version: exercise-4
 
+    - name: Install dependencies with poetry
+      command:
+        cmd: ~/.local/bin/poetry install
+        chdir: /opt/todoapp
+
