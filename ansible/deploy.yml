@@ -55,3 +55,9 @@
         dest: /opt/todoapp/.env
         owner: ec2-user
         mode: u=rw,g=r,o=r
+
+    - name: Copy todoapp service file
+      ansible.builtin.copy:
+        src: etc/systemd/system/todoapp.service
+        dest: /etc/systemd/system/todoapp.service
+        become: true
