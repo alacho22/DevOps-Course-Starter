@@ -1,6 +1,22 @@
 - name: Deploy web servers
   hosts: webservers
   remote_user: ec2-user
+  vars_prompt:
+  - name: secret_key
+    prompt: Enter secret key for flask session feature
+    private: true
+  - name: trello_api_key
+    prompt: Enter a trello api key generated using the steps documented in "Populating TRELLO_ Environment Variables" in the README  
+    private: true
+  - name: trello_api_token
+    prompt: Enter a trello api token generated using the steps documented in "Populating TRELLO_ Environment Variables" in the README  
+    private: true
+  - name: trello_board_id
+    prompt: Enter a trello board id found using the steps documented in "Populating TRELLO_ Environment Variables" in the README
+  - name: trello_todo_list_id
+    prompt: Enter a trello list id to use for to do items found using the steps documented in "Populating TRELLO_ Environment Variables" in the README
+  - name: trello_done_list_id
+    prompt: Enter a trello list id to use for done items found using the steps documented in "Populating TRELLO_ Environment Variables" in the README
   tasks:
     - name: Install git and python3
       become: true
@@ -33,3 +49,9 @@
         cmd: ~/.local/bin/poetry install
         chdir: /opt/todoapp
 
+    - name: Copy over .env with template values
+      ansible.builtin.template:
+        src: templates/.env.j2
+        dest: /opt/todoapp/.env
+        owner: ec2-user
+        mode: u=rw,g=r,o=r
