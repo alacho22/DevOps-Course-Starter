@@ -57,7 +57,7 @@
         mode: u=rw,g=r,o=r
 
     - name: Copy todoapp service file
+      become: true
       ansible.builtin.copy:
         src: etc/systemd/system/todoapp.service
         dest: /etc/systemd/system/todoapp.service
-        become: true
