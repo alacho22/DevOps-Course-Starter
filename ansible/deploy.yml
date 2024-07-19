@@ -61,3 +61,10 @@
       ansible.builtin.copy:
         src: etc/systemd/system/todoapp.service
         dest: /etc/systemd/system/todoapp.service
+
+    - name: Restart the todoapp service
+      become: true
+      ansible.builtin.systemd_service:
+        name: todoapp
+        daemon_reload: true
+        state: restarted
