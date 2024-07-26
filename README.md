@@ -100,3 +100,13 @@ Now visit [`http://localhost:5000/`](http://localhost:5000/) in your web browser
 ```bash
 $ poetry run pytest
 ```
+
+## Deploying the app using ansible
+
+To deploy the app using ansible run the following command from an ansible control node:
+
+```bash
+ ansible-playbook ./ansible/deploy.yml -i ./ansible/hosts
+```
+
+Then follow the prompts to provide the configuration values.
