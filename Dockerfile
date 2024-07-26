@@ -20,3 +20,10 @@ ENV FLASK_ENV=development
 ENV FLASK_DEBUG=true
 RUN poetry install --no-interaction --no-root
 ENTRYPOINT [ "poetry", "run", "flask", "run", "--host=0.0.0.0" ]
+
+FROM base as test
+
+ENV PYTHONPATH=/app/todo_app
+RUN poetry install --no-interaction --no-root
+COPY todo_app ./todo_app
+ENTRYPOINT [ "poetry", "run", "pytest" ]
