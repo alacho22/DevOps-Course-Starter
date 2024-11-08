@@ -101,6 +101,13 @@ Now visit [`http://localhost:5000/`](http://localhost:5000/) in your web browser
 $ poetry run pytest
 ```
 
+Or you can run them using the docker image using:
+
+```bash
+docker build --target test -t todo-test .
+docker run --env-file .env.test todo-test
+```
+
 ## Deploying the app using ansible
 
 To deploy the app using ansible run the following command from an ansible control node:

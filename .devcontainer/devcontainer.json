@@ -13,7 +13,8 @@
 			"extensions": [
 				"ms-python.black-formatter",
 				"rangav.vscode-thunder-client",
-				"ms-python.pylint"
+				"ms-python.pylint",
+				"GitHub.vscode-github-actions"
 			]
 		}
 	},
